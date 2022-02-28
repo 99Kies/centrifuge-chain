@@ -20,4 +20,4 @@ jobs:
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - run: git status
       - name: Build centrifuge-chain
-        run: nix build --no-allow-dirty -L && git status
+        run: nix build --no-allow-dirty -L .\?rev=$(git rev-parse HEAD) && git status
