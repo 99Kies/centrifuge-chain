@@ -15,5 +15,6 @@ jobs:
         with:
           name: centrifuge-chain
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - run: git status
       - name: Build centrifuge-chain
         run: nix build -L
